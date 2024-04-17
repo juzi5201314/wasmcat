@@ -1,0 +1,10 @@
+[package]
+name = "wasmcat-cli"
+version = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+
+argh = "0.1.12"

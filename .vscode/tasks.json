@@ -1,0 +1,50 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cargo",
+			"command": "test",
+			"args": [
+				"--package",
+				"wasmcat-parser",
+				"--lib",
+				"--features=parallel",
+				"--",
+				"parser::tests",
+				"--nocapture"
+			],
+			"env": {
+				"RUST_BACKTRACE": "short",
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build",
+			"label": "rust: test-mod parser::tests"
+		},
+		{
+			"type": "cargo",
+			"command": "bench",
+			"args": [
+				"--package",
+				"wasmcat-parser",
+				"--bench",
+				"bench",
+				"--features=parallel",
+				"--",
+				"--exact",
+				"--nocapture",
+				"--test-threads=1"
+			],
+			"env": {
+				"RUST_BACKTRACE": "short",
+				"RUSTFLAGS": "-C target-cpu=native"
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build",
+			"label": "bench wasm parser"
+		}
+	]
+}

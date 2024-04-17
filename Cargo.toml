@@ -1,0 +1,14 @@
+[workspace.package]
+edition = "2021"
+authors = ["soeur"]
+
+[workspace]
+members = ["fuzz", "cli", "crates/parser"]
+default-members = ["cli"]
+resolver = "2"
+
+[workspace.dependencies]
+wasmcat-parser = { path = "crates/parser" }
+
+anyhow = "1.0.82"
+thiserror = "1.0.58"
