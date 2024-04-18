@@ -6,14 +6,14 @@ authors.workspace = true
 
 [dependencies]
 thiserror.workspace = true
+smol_str.workspace = true
+smallvec.workspace = true
 
 leb128 = "0.2.5"
-smol_str = "0.2.1"
 wasmparser = "0.203.0"
-smallvec = "1.13.2"
 
-rayon = { version = "1.10", optional = true }
-spin = { version = "0.9.8", optional = true }
+rayon = { workspace = true, optional = true }
+spin = { workspace = true, optional = true }
 
 [dev-dependencies]
 wasm-smith = "0.203.0"

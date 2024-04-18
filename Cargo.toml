@@ -3,12 +3,17 @@ edition = "2021"
 authors = ["soeur"]
 
 [workspace]
-members = ["fuzz", "cli", "crates/parser"]
-default-members = ["cli"]
+members = ["fuzz", "cli", "crates/parser", "crates/runtime"]
+default-members = ["cli", "crates/runtime"]
 resolver = "2"
 
 [workspace.dependencies]
 wasmcat-parser = { path = "crates/parser" }
+wasmcat-rt = { path = "crates/runtime" }
 
 anyhow = "1.0.82"
 thiserror = "1.0.58"
+smallvec = "1.13.2"
+smol_str = "0.2.1"
+rayon = "1.10"
+spin = "0.9.8"
